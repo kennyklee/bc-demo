@@ -1,12 +1,11 @@
-<!--
-Credit: Put this demo page together learning from this awesome blogpost by Ryan Horst.
-http://curiousecurity.com/blue-coat-proxysg-creating-a-splash-page/
--->
+<!-- UNCOMMENT CODE SNIPPET BELOW IN BLUECOAT
 
-<!-- (exception.user-defined.Weblife_Redirection
+(exception.user-defined.Weblife_Redirection
   (http
     (code "403")
-    (format <<--WeblifeRedirection-- -->
+    (format <<--WeblifeRedirection--
+
+REMOVE THIS LINE IN BLUECOAT -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -83,6 +82,16 @@ table {
 </style>
 <body>
 <!-- Start of Weblife message -->
+
+<!--
+Credit: This demo page was put together by learning from this awesome blogpost from Ryan Horst.
+http://curiousecurity.com/blue-coat-proxysg-creating-a-splash-page/
+-->
+
+<script>
+  alert("YOU ARE...");
+</script>
+
 <div class="weblife-message">
   Using Weblife
   <img width='25px' src='https://cdn2.hubspot.net/hubfs/2696922/Weblife/Logos/WeblifeLogo.png' />, you may safely go to:
@@ -162,12 +171,13 @@ Internet usage is logged and subject to monitoring, in accordance with the Compa
 </p>***This is a restricted system and for use by authorized personnel only***
 </div>
 <script>
-  // Script goes here
+  alert("AWESOME!!!");
 </script>
 </body>
 </html>
+<!-- UNCOMMENT CODE SNIPPET BELOW IN BLUECOAT
 
-<!-- --WeblifeRedirection--
-    )
-  )
-)
+--WeblifeRedirection--
+))))
+
+REMOVE THIS LINE IN BLUECOAT -->
