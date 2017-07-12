@@ -1,0 +1,173 @@
+<!--
+Credit: Put this demo page together learning from this awesome blogpost by Ryan Horst.
+http://curiousecurity.com/blue-coat-proxysg-creating-a-splash-page/
+-->
+
+<!-- (exception.user-defined.Weblife_Redirection
+  (http
+    (code "403")
+    (format <<--WeblifeRedirection-- -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Weblife">
+  <meta name="description" content="Weblife Redirection Page">
+  <title>Weblife Redirect Page</title>
+</head>
+
+<style type="text/css" media="screen">
+body {
+     margin:50px 0px;
+     padding:0px;
+     text-align:center;
+     }
+
+#content {
+   width:890px;
+   margin:0px auto;
+   text-align:center;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 14px;
+         color: #666;
+   padding:15px;
+   border:3px outset #8ac240;
+   background-color:#fff;
+   }
+
+table {
+      table-layout:fixed;
+      width:100%;
+      font-size: 14px;
+      color: #666;
+      word-break:break-all;
+      }
+
+.details-column-left {
+                     text-align:right;
+                     padding-right:2px;
+                     color: #666;
+                     }
+
+.details-column-right {
+                      text-align:left;
+                      padding-left:2px;
+                      color: #528505;
+                      }
+
+.weblife-message {
+  margin:1em 0;
+  padding:2em;
+  border-radius:8px;
+  background-color:#F4F5F6;
+  font-size:1.3em;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  box-shadow: 3px 3px 15px 0px rgba(153,153,153,0.5);
+}
+
+.weblife-url {
+  color:#677083;
+  font-size:0.8em;
+  font-style:italic;
+  margin:1em;
+}
+
+.weblife-footnote {
+  margin-top:2em;
+  text-align:center;
+  font-size:0.7em;
+}
+
+</style>
+<body>
+<!-- Start of Weblife message -->
+<div class="weblife-message">
+  Using Weblife
+  <img width='25px' src='https://cdn2.hubspot.net/hubfs/2696922/Weblife/Logos/WeblifeLogo.png' />, you may safely go to:
+
+  <div class="weblife-url">
+      $(url)
+  </div>
+
+  <div><strong>Click on the link below:</strong></div><br>
+  <a href="https://go.weblife.io/browser?url=$(url)">https://go.weblife.io/browser?url=$(url)</a>
+  <div class="weblife-footnote">
+    <strong>Note:</strong> Weblife is a secure web browsing service that protects the company from malware and is an alternative to blocking complete access to this site. For more information, click <a href='https://cdn2.hubspot.net/hubfs/2696922/Resources/WBL.Divide.SolutionBrief.pdf'>here.</a>
+  </div>
+</div>
+<!-- End of Weblife message -->
+
+<div id=content>
+<img src=http://d.weblife.us/l9qPzJ+></p>
+<font size=5>Access to this site is restricted.</font>
+</p>
+<font size=3><font color=#E0001B>Attention:</font></font> Access to the requested website "<font
+
+color=#E0001B>$(url)</font>" is restricted in accordance with the Company-X <a
+
+href="http://www.company-x.com/policy/internet-use.html" target="_blank">acceptable internet use policy</a>.
+</p>
+<p>If access to the website is required for business purposes please <a href="mailto:security@Company-X.com?
+
+subject=Internet Proxy Exception
+Request - $(url)&amp;body=Security Team, please review the following request for access:%0A%0A
+Requestor's Username: $(user.name)%0A
+Requestor's IP Address: $(client.address)%0A
+Web Page URL: $(url)%0A
+Web Page Category: $(cs-categories)%0A
+Current UTC date/time: $(month.utc)-$(day.utc)-$(year.utc) $(time.utc)%0A
+Connection request details collected from: $(proxy.name)%0A%0A
+">send an email to Company-X security team</a>,to have your request for exception reviewed.</p>
+<font color=#E0001B>Note:</font> User will be required to provide business justification to within the email.</p>
+<hr>
+</p>
+Internet usage is logged and subject to monitoring, in accordance with the Company-X
+<a href="http://www.company-x.com/policy/network-monitoring.html" target="_blank">network monitoring policy</a>.
+</p>
+<table>
+<caption>Connection Request Details</caption>
+    <tr>
+       <td class="details-column-left">Company-X Internet Proxy:</th>
+       <td width="1">&nbsp;</td>
+       <td class="details-column-right">$(proxy.name)</td>
+    </tr>
+    <tr>
+       <td class="details-column-left">Your Username:</th>
+       <td width="1">&nbsp;</td>
+       <td class="details-column-right">$(user.name)</td>
+    </tr>
+    <tr>
+       <td class="details-column-left">Your IP Address:</th>
+       <td width="1">&nbsp;</td>
+       <td class="details-column-right">$(client.address)</td>
+    </tr>
+    <tr>
+       <td class="details-column-left">Web Page URL:</th>
+       <td width="1">&nbsp;</td>
+       <td class="details-column-right">$(url)</td>
+    </tr>
+    <tr>
+       <td class="details-column-left">Web Page Category:</th>
+       <td width="1">&nbsp;</td>
+       <td class="details-column-right">$(cs-categories)</td>
+    </tr>
+    <tr>
+       <td class="details-column-left">Current UTC date/time:</th>
+       <td width="1">&nbsp;</td>
+       <td class="details-column-right">$(month.utc)-$(day.utc)-$(year.utc) at $(time.utc)</td>
+    </tr>
+</table>
+</p>***This is a restricted system and for use by authorized personnel only***
+</div>
+<script>
+  // Script goes here
+</script>
+</body>
+</html>
+
+<!-- --WeblifeRedirection--
+    )
+  )
+)
